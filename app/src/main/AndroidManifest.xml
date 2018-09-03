@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.jby.com.app">
+    package="com.jby.money">
 
     <application
         android:allowBackup="true"
