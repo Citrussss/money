@@ -1,9 +1,9 @@
 package com.jby.money.inject.component;
 
 
-
 import com.jby.money.inject.module.ActivityModule;
 import com.jby.money.inject.scope.ActivityScope;
+import com.jby.money.ui.startup.StartUpActivity;
 
 import dagger.Component;
 
@@ -21,7 +21,10 @@ import dagger.Component;
 @ActivityScope
 @Component(dependencies = AppComponent.class, modules = {ActivityModule.class})
 public interface ActivityComponent {
-    interface Router {
+    void inject(StartUpActivity activity);
 
+    interface Router {
+        String main = "/main/";
+        String startup = main + "startup";
     }
 }
