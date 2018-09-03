@@ -1,0 +1,10 @@
+/build
+/gradlew
+/gradle
+/.idea
+*.iml
+*.bat
+*.properties
+*.md
+*.zip
+
