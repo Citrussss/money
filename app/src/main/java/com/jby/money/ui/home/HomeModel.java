@@ -24,7 +24,7 @@ public class HomeModel extends PagerModel<HomeActivity, ActivityHomeBinding, Hom
     @Override
     public void attachView(Bundle savedInstanceState, HomeActivity activity) {
         super.attachView(savedInstanceState, activity);
-        setRcHttp((offset1, refresh) -> Observable.range(0, 2)
+        setRcHttp((offset1, refresh) -> Observable.range(0, 3)
                 .map(i -> new HomeEntity())
                 .toList()
                 .toObservable()

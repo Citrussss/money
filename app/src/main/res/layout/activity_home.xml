@@ -45,7 +45,13 @@
                 android:gravity="center"
                 android:text="@string/calendar" />
 
-
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="陀螺仪测试" />
         </com.binding.model.view.radio.CheckRadioGroup>
     </LinearLayout>
 </layout>

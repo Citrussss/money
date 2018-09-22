@@ -4,6 +4,7 @@ import com.jby.money.inject.module.FragmentModule;
 import com.jby.money.inject.scope.FragmentScope;
 import com.jby.money.ui.home.calendar.CalendarFragment;
 import com.jby.money.ui.home.record.RecordFragment;
+import com.jby.money.ui.home.sensor.SensorFragment;
 
 import dagger.Component;
 
@@ -25,4 +26,5 @@ import dagger.Component;
 public interface FragmentComponent {
     void inject(RecordFragment fragment);
     void inject(CalendarFragment fragment);
+    void inject(SensorFragment fragment);
 }

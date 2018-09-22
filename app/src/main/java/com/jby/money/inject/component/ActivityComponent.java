@@ -28,5 +28,6 @@ public interface ActivityComponent {
         String main = "/main/";
         String startup = main + "startup";
         String home = main + "home";
+//        String sensor = main +"sensor";
     }
 }
