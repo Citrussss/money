@@ -3,6 +3,7 @@ package com.jby.money.inject.component;
 
 import com.jby.money.inject.module.ActivityModule;
 import com.jby.money.inject.scope.ActivityScope;
+import com.jby.money.ui.home.HomeActivity;
 import com.jby.money.ui.startup.StartUpActivity;
 
 import dagger.Component;
@@ -22,9 +23,10 @@ import dagger.Component;
 @Component(dependencies = AppComponent.class, modules = {ActivityModule.class})
 public interface ActivityComponent {
     void inject(StartUpActivity activity);
-
+    void inject(HomeActivity activity);
     interface Router {
         String main = "/main/";
         String startup = main + "startup";
+        String home = main + "home";
     }
 }

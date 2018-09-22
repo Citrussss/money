@@ -2,9 +2,10 @@ package com.jby.money.inject.component;
 
 import android.content.Context;
 
-import com.alibaba.sdk.android.oss.OSSClient;
 import com.jby.money.inject.data.api.Api;
+import com.jby.money.inject.data.sql.DatabaseApi;
 import com.jby.money.inject.module.AppModule;
+import com.jby.money.inject.module.DataModule;
 import com.jby.money.inject.module.NetWorkModule;
 import com.jby.money.inject.qualifier.context.AppContext;
 import com.jby.money.inject.scope.ApplicationScope;
@@ -25,10 +26,10 @@ import dagger.Component;
  */
 
 @ApplicationScope
-@Component(modules={AppModule.class, NetWorkModule.class})
+@Component(modules={AppModule.class, NetWorkModule.class,DataModule.class})
 public interface AppComponent {
-    @AppContext
-    Context context();
+    @AppContext Context context();
     Api getApi();
+    DatabaseApi getDatabaseApi();
     void inject(MoneyApplication application);
 }
