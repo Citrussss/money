@@ -1,8 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.alibaba:arouter-api-1.2.4">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/arouter-api-1.2.4.aar/2227edca764e77c727d3628bd3322ca7/annotations.zip!/" />
+    </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/arouter-api-1.2.4.aar/124238c7947c7761e63df4aae3a426b5/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/arouter-api-1.2.4.aar/124238c7947c7761e63df4aae3a426b5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/arouter-api-1.2.4.aar/2227edca764e77c727d3628bd3322ca7/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/arouter-api-1.2.4.aar/2227edca764e77c727d3628bd3322ca7/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

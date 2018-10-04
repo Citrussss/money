@@ -7,11 +7,12 @@ import com.jby.money.BuildConfig;
 import com.jby.money.inject.component.AppComponent;
 import com.jby.money.inject.component.DaggerAppComponent;
 import com.jby.money.inject.module.AppModule;
+import com.jby.money.ui.user.User;
 
 public class MoneyApplication extends Application {
     private static AppComponent appComponent;
     private static MoneyApplication application;
-
+    private static User user;
 
     public static AppComponent getAppComponent() {
         return appComponent;

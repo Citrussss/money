@@ -5,6 +5,7 @@ import com.jby.money.inject.module.ActivityModule;
 import com.jby.money.inject.scope.ActivityScope;
 import com.jby.money.ui.home.HomeActivity;
 import com.jby.money.ui.startup.StartUpActivity;
+import com.jby.money.ui.user.login.LoginActivity;
 
 import dagger.Component;
 
@@ -24,10 +25,13 @@ import dagger.Component;
 public interface ActivityComponent {
     void inject(StartUpActivity activity);
     void inject(HomeActivity activity);
+    void inject(LoginActivity activity);
     interface Router {
         String main = "/main/";
+        String user = "/user/";
         String startup = main + "startup";
         String home = main + "home";
+        String login = user+"login";
 //        String sensor = main +"sensor";
     }
 }
