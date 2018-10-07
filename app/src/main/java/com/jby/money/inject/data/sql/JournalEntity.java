@@ -17,18 +17,9 @@ import com.raizlabs.android.dbflow.annotation.Table;
 
 import timber.log.Timber;
 
-@Table(database = DataModule.class)
 @ModelView(R.layout.holder_journal)
-public class JournalEntity extends ViewDbInflate {
+public class JournalEntity extends DetailEntity {
 
-    @PrimaryKey(autoincrement = true)
-    @Column
-    private int id;
-    @Column
-    private long currentTimeMillis;
-    @Column
-    private String describe;
-    @Column
     int money;
     public transient ObservableField<String> yearOb = new ObservableField<>("");
     public transient ObservableField<String> monthOb = new ObservableField<>("");
@@ -38,7 +29,7 @@ public class JournalEntity extends ViewDbInflate {
     @Override
     public ViewDataBinding attachView(Context context, ViewGroup co, boolean attachToParent, ViewDataBinding binding) {
         ViewDataBinding dataBinding = super.attachView(context, co, attachToParent, binding);
-        setTime(JimUtils.getStringTime(currentTimeMillis));
+        setTime(JimUtils.getStringTime(lastEditTime));
         return dataBinding;
     }
 
@@ -59,12 +50,12 @@ public class JournalEntity extends ViewDbInflate {
     }
 
     public long getCurrentTimeMillis() {
-        return currentTimeMillis;
+        return createTime;
     }
 
     public void setCurrentTimeMillis(long currentTimeMillis) {
-        this.currentTimeMillis = currentTimeMillis;
-        setTime(JimUtils.getStringTime(this.currentTimeMillis));
+        this.lastEditTime = currentTimeMillis;
+        setTime(JimUtils.getStringTime(this.lastEditTime));
     }
 
     public String getDescribe() {

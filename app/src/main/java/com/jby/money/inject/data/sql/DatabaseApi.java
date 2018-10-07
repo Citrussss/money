@@ -64,6 +64,15 @@ public class DatabaseApi {
         }
         return Observable.just(new InfoEntity<>("账号不存在",200));
     }
+
+/*    *//**
+     * 记录日志
+     *//*
+    public Observable<InfoEntity> saveDetail(DetailEntity entity){
+
+
+
+    }*/
     /*public Observable<UserEntity> login(LoginParams loginParams){
         return RXSQLite.rx(select.from(UserEntity.class)
         .where(UserEntity)
