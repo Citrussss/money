@@ -3,6 +3,7 @@ package com.jby.money.ui.startup;
 
 import android.os.Bundle;
 
+import com.binding.model.Config;
 import com.binding.model.model.ModelView;
 import com.binding.model.model.ViewModel;
 import com.jby.money.R;
@@ -12,6 +13,7 @@ import com.jby.money.databinding.ActivityStartupBinding;
 import javax.inject.Inject;
 
 import static com.jby.money.inject.component.ActivityComponent.Router.home;
+import static com.jby.money.inject.component.ActivityComponent.Router.login;
 
 @ModelView(R.layout.activity_startup)
 public class StartUpModel extends ViewModel<StartUpActivity, ActivityStartupBinding> {
@@ -25,7 +27,9 @@ public class StartUpModel extends ViewModel<StartUpActivity, ActivityStartupBind
 //        Intent intent = new Intent();
 //        intent.setClass(getT(), HomeActivity.class);
 //        getT().startActivity(intent);
-        ArouterUtil.navigation(home);
+        Bundle bundle =new Bundle();
+        bundle.putString(Config.title,"用户登录");
+        ArouterUtil.navigation(login,bundle);
         finish();
     }
 }

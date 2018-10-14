@@ -23,6 +23,7 @@ import javax.inject.Inject;
 @ModelView(R.layout.activity_login)
 public class LoginModel extends ViewModel<LoginActivity,ActivityLoginBinding> {
     @Inject LoginModel(){}
+    public String loginBg="http://kk.51.com/refer?url=https://mmbiz.qpic.cn/mmbiz_gif/BOeKkc9wvYe92nLf0lTPMMLNmZP3gWK5iaDTZoQWcveThSk4XfWAia7QpmArbiaX0V1NiaWF027OKPMLU8mdmiaDKEg/640?wx_fmt=gif";
     @Override
     public void attachView(Bundle savedInstanceState, LoginActivity loginActivity) {
         super.attachView(savedInstanceState, loginActivity);

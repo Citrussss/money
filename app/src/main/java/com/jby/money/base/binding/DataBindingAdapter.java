@@ -26,6 +26,8 @@ import com.bumptech.glide.request.transition.Transition;
 
 import java.io.File;
 
+import timber.log.Timber;
+
 
 /**
  * project：cutv_ningbo
@@ -94,6 +96,7 @@ public class DataBindingAdapter {
     @BindingAdapter("src")
     public static void setImageDrawable(ImageView imageView, String url) {
         if (TextUtils.isEmpty(url)) return;
+        Timber.i(url);
         Context context = imageView.getContext();
         Glide.with(context).clear(imageView);
         Glide.with(context)
