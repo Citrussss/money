@@ -18,5 +18,6 @@
         <activity android:name=".ui.home.HomeActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".ui.user.login.LoginActivity" />
+        <activity android:name=".ui.user.register.RegisterActivity" />
     </application>
 </manifest>
