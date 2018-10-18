@@ -94,10 +94,14 @@
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="48dp"
+                        android:text="登录"
+                        android:onClick="@{vm::onLoginClick}"
                         android:layout_weight="1" />
 
                     <Button
                         android:layout_width="0dp"
+                        android:text="注册"
+                        android:onClick="@{vm::onRegisterClick}"
                         android:layout_height="48dp"
                         android:layout_weight="1" />
                 </LinearLayout>

@@ -32,13 +32,13 @@ public class SensorModel extends ViewModel<SensorFragment, FragmentSensorBinding
     @Override
     public void attachView(Bundle savedInstanceState, SensorFragment fragment) {
         super.attachView(savedInstanceState, fragment);
-        //获得 硬件控制器
-        try {
-            initSensor();
-        } catch (Exception e) {
-            BaseUtil.toast("没得救了啊！！！！"+e);
-            e.printStackTrace();
-        }
+//        //获得 硬件控制器
+//        try {
+//            initSensor();
+//        } catch (Exception e) {
+//            BaseUtil.toast("没得救了啊！！！！"+e);
+//            e.printStackTrace();
+//        }
     }
 
     private void initSensor() {

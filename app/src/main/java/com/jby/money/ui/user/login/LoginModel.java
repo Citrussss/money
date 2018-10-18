@@ -2,13 +2,18 @@ package com.jby.money.ui.user.login;
 
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.binding.model.model.ModelView;
 import com.binding.model.model.ViewModel;
 import com.jby.money.R;
+import com.jby.money.base.arouter.ArouterUtil;
 import com.jby.money.databinding.ActivityLoginBinding;
 
 import javax.inject.Inject;
+
+import static com.jby.money.inject.component.ActivityComponent.Router.home;
+import static com.jby.money.inject.component.ActivityComponent.Router.rigister;
 
 /**
  * @name money
@@ -27,5 +32,11 @@ public class LoginModel extends ViewModel<LoginActivity,ActivityLoginBinding> {
     @Override
     public void attachView(Bundle savedInstanceState, LoginActivity loginActivity) {
         super.attachView(savedInstanceState, loginActivity);
+    }
+    public void onLoginClick(View view){
+        ArouterUtil.navigation(home);
+    }
+    public void onRegisterClick(View view){
+        ArouterUtil.navigation(rigister);
     }
 }

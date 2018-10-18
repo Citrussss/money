@@ -20,7 +20,7 @@ public class RecordModel extends RecyclerModel<RecordFragment, FragmentRecordBin
     @Override
     public void attachView(Bundle savedInstanceState, RecordFragment fragment) {
         super.attachView(savedInstanceState, fragment);
-        setRcHttp((offset1, refresh) -> databaseApi.getJournalEntity());
+//        setRcHttp((offset1, refresh) -> databaseApi.getJournalEntity());
 
     }
 
