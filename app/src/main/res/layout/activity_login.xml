@@ -7,6 +7,10 @@
         <variable
             name="vm"
             type="com.jby.money.ui.user.login.LoginModel" />
+
+        <variable
+            name="params"
+            type="com.jby.money.ui.user.UserEntity" />
     </data>
 
     <LinearLayout
@@ -79,12 +83,14 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:hint="账号" />
+                    android:hint="账号"
+                    android:text="@{String.valueOf(params.mobile)}" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:hint="密码" />
+                    android:hint="密码"
+                    android:text="@{params.password}" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -94,16 +100,16 @@
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="48dp"
-                        android:text="登录"
+                        android:layout_weight="1"
                         android:onClick="@{vm::onLoginClick}"
-                        android:layout_weight="1" />
+                        android:text="登录" />
 
                     <Button
                         android:layout_width="0dp"
-                        android:text="注册"
-                        android:onClick="@{vm::onRegisterClick}"
                         android:layout_height="48dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:onClick="@{vm::onRegisterClick}"
+                        android:text="注册" />
                 </LinearLayout>
 
                 <TextView

@@ -16,6 +16,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import timber.log.Timber;
 
 
 /**
@@ -39,12 +40,12 @@ public class NetWorkModule {
     Api provideReadApi(OkHttpClient okHttpClient, UserInterceptor userInterceptor) {
         OkHttpClient client = okHttpClient.newBuilder()
                 .addInterceptor(userInterceptor).build();
-        return new Retrofit.Builder()
-                .baseUrl(BuildConfig.API_HOST)
-                .addConverterFactory(JsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
-                .callFactory(client)
-                .build().create(Api.class);
+           return new Retrofit.Builder()
+                   .baseUrl(BuildConfig.API_HOST)
+                   .addConverterFactory(JsonConverterFactory.create())
+                   .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
+                   .callFactory(client)
+                   .build().create(Api.class);
     }
 
     @Provides

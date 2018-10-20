@@ -32,13 +32,8 @@ android {
             minifyEnabled false
             applicationIdSuffix ".money"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            manifestPlaceholders = [
-//                    JPUSH_PKGNAME: "com.social.company",
-//                    JPUSH_APPKEY : "36f26bee399abed305900060",
-//                    JPUSH_CHANNEL: "developer-default"]
-            buildConfigField "String", "API_HOST", "\"192.168.1.160:8080\""
-//        buildConfigField "String", "API_HOST", "\"http://www.qiqi166.com:8001\""
-//            buildConfigField "String", "API_HOST", "\"http://192.168.1.8:8001\""
+            buildConfigField "String", "API_HOST", "\"http://192.168.1.160:8080/\""
+
         }
         release {
             minifyEnabled false
@@ -93,4 +88,7 @@ dependencies {
     implementation 'com.github.stuxuhai:jpinyin:1.1.8'
     implementation 'com.contrarywind:Android-PickerView:3.2.7'
     implementation 'com.haibin:calendarview:3.4.8'
+
+    implementation 'com.sdsmdg.tastytoast:tastytoast:0.1.1'
+
 }
