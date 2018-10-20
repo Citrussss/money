@@ -36,7 +36,7 @@ android {
 //                    JPUSH_PKGNAME: "com.social.company",
 //                    JPUSH_APPKEY : "36f26bee399abed305900060",
 //                    JPUSH_CHANNEL: "developer-default"]
-            buildConfigField "String", "API_HOST", "\"http://api.dev.qiqi166.com\""
+            buildConfigField "String", "API_HOST", "\"192.168.1.160:8080\""
 //        buildConfigField "String", "API_HOST", "\"http://www.qiqi166.com:8001\""
 //            buildConfigField "String", "API_HOST", "\"http://192.168.1.8:8001\""
         }
