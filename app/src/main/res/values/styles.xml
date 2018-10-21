@@ -10,5 +10,9 @@
         <item name="android:textColorHint">#8198a3</item>
         <item name="colorControlNormal">#8198a3</item>
     </style>
-
+    <style name="login_input_edit">
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:background">@null</item>
+    </style>
 </resources>

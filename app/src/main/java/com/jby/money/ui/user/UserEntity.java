@@ -1,8 +1,14 @@
 package com.jby.money.ui.user;
 
 
+import com.binding.model.data.encrypt.SingleTransParams;
 import com.binding.model.model.ViewInflate;
 import com.binding.model.model.inter.Inflate;
+import com.google.gson.Gson;
+import com.jby.money.inject.data.api.ApiParams;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 /**
  * @name money
@@ -14,7 +20,7 @@ import com.binding.model.model.inter.Inflate;
  * @chang time
  * @class describe
  */
-public class UserEntity extends ViewInflate {
+public class UserEntity extends ViewInflate implements SingleTransParams {
 
     /**
      * id : 1
@@ -23,7 +29,7 @@ public class UserEntity extends ViewInflate {
      */
 
     private int id;
-    private int mobile;
+    private String mobile;
     private String password;
 
     public int getId() {
@@ -34,11 +40,11 @@ public class UserEntity extends ViewInflate {
         this.id = id;
     }
 
-    public int getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    public void setMobile(int mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 
@@ -48,5 +54,16 @@ public class UserEntity extends ViewInflate {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public RequestBody transParams() {
+        MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
+        return RequestBody.create(mediaType, new Gson().toJson(this));
+    }
+
+    @Override
+    public String encrypt(Object json) {
+        return json.toString();
     }
 }

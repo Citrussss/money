@@ -1,7 +1,10 @@
 package com.jby.money.ui.home;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
+import android.view.MenuItem;
 
 import com.binding.model.adapter.pager.FragmentAdapter;
 import com.binding.model.layout.pager.PagerModel;
@@ -15,7 +18,7 @@ import javax.inject.Inject;
 import io.reactivex.Observable;
 
 @ModelView(R.layout.activity_home)
-public class HomeModel extends PagerModel<HomeActivity, ActivityHomeBinding, HomeEntity> {
+public class HomeModel extends PagerModel<HomeActivity, ActivityHomeBinding, HomeEntity>  {
     @Inject
     HomeModel(@ActivityFragmentManager FragmentManager fragmentManager) {
         super(new FragmentAdapter<>(fragmentManager));

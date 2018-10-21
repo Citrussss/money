@@ -2,7 +2,7 @@ package com.jby.money.base.util;
 
 public interface Constant {
 
-    int success = 0;
+    int success = 1;
 
     String NAME ="money";
 

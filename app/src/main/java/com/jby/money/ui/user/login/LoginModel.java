@@ -61,6 +61,7 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
                 .compose(new RestfulTransformer<>())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe((userEntity -> getDataBinding().setParams(userEntity.get(0))),LToast::error));
+        ArouterUtil.navigation(home);
     }
 
     public void onRegisterClick(View view) {

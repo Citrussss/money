@@ -26,4 +26,14 @@ public class LToast {
         }.start();
     }
 
+    public static void message(Object o) {
+        new Thread() {
+            @Override
+            public void run() {
+                Looper.prepare();
+                TastyToast.makeText(App.getCurrentActivity(), o.toString(), TastyToast.LENGTH_LONG, TastyToast.INFO);
+                Looper.loop();
+            }
+        }.start();
+    }
 }

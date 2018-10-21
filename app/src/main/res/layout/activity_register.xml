@@ -6,14 +6,19 @@
         <variable
             name="vm"
             type="com.jby.money.ui.user.register.RegisterModel" />
+
+        <variable
+            name="params"
+            type="com.jby.money.ui.user.UserEntity" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/light_gray"
         android:orientation="vertical">
 
-        <include layout="@layout/toolbar_normal_without_back" />
+        <!--<include layout="@layout/toolbar_normal_without_back" />-->
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -22,24 +27,35 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="vertical">
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15dp"
+                android:background="@drawable/login_item_white_bg"
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <EditText
+                    style="@style/login_input_edit"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/input_normal_height"
-                    android:hint="手机号" />
+                    android:hint="手机号"
+                    android:text="@={params.mobile}" />
 
                 <EditText
+                    style="@style/login_input_edit"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/toolbar_height"
-                    android:hint="密码" />
+                    android:hint="密码"
+                    android:text="@={params.password}" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/input_normal_height"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="80dp" />
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/login_item_dark_green_bg"
+                    android:onClick="@{vm::onRigisterClick}"
+                    android:text="注册"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/big_text_size" />
 
             </LinearLayout>
 
