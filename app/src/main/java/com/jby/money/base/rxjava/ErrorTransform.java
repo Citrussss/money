@@ -2,11 +2,13 @@ package com.jby.money.base.rxjava;
 
 import com.binding.model.data.exception.ApiException;
 import com.binding.model.data.exception.TokenExpireException;
-import com.jby.money.base.util.Constant;
-import com.jby.money.base.util.InfoEntity;
+import com.jby.money.ui.Constant;
+import com.union.bangbang.zero.util.InfoEntity;
+
 
 import org.json.JSONException;
 
+import java.net.ConnectException;
 import java.util.ServiceConfigurationError;
 
 import io.reactivex.Observable;
@@ -72,6 +74,8 @@ public class ErrorTransform<T> implements ObservableTransformer<T, T> {
             throw new ApiException("服务器错误",0);
         } else if (throwable instanceof JSONException) {
             throw new ApiException("数据解析错误",0);
+        } else if (throwable instanceof ConnectException){
+            throw new ApiException("未能连接到对应服务器",0);
         }
         return Observable.error(throwable);
     }

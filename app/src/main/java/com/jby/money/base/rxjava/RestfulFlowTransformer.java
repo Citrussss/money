@@ -1,6 +1,7 @@
 package com.jby.money.base.rxjava;
 
-import com.jby.money.base.util.InfoEntity;
+
+import com.union.bangbang.zero.util.InfoEntity;
 
 import org.reactivestreams.Publisher;
 

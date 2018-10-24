@@ -2,10 +2,10 @@ package com.jby.money.inject.module;
 
 import android.content.Context;
 
-import com.jby.money.base.util.Constant;
 import com.jby.money.inject.data.sql.DatabaseApi;
 import com.jby.money.inject.qualifier.context.AppContext;
 import com.jby.money.inject.scope.ApplicationScope;
+import com.jby.money.ui.Constant;
 import com.raizlabs.android.dbflow.annotation.Database;
 import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;

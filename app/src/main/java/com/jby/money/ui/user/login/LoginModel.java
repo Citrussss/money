@@ -12,11 +12,12 @@ import com.binding.model.util.BaseUtil;
 import com.jby.money.R;
 import com.jby.money.base.arouter.ArouterUtil;
 import com.jby.money.base.rxjava.RestfulTransformer;
-import com.jby.money.base.util.audiorecord.LToast;
+import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.databinding.ActivityLoginBinding;
 import com.jby.money.inject.data.api.Api;
 import com.jby.money.inject.data.sql.DatabaseApi;
 import com.jby.money.ui.user.UserEntity;
+import com.union.bangbang.zero.util.audiorecord.LToast;
 
 import javax.inject.Inject;
 
@@ -57,11 +58,12 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
 
     public void onLoginClick(View view) {
 //        ArouterUtil.navigation(home);
+
         addDisposable(api.login()
                 .compose(new RestfulTransformer<>())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((userEntity -> getDataBinding().setParams(userEntity.get(0))),LToast::error));
-        ArouterUtil.navigation(home);
+                .subscribe((userEntity -> getDataBinding().setParams(userEntity.get(0))),FunnyToast::error));
+//        ArouterUtil.navigation(home);
     }
 
     public void onRegisterClick(View view) {

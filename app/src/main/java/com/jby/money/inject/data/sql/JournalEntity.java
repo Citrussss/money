@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 
 import com.binding.model.model.ModelView;
 import com.jby.money.R;
-import com.jby.money.base.util.JimUtils;
 import com.jby.money.inject.module.DataModule;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
+import com.union.bangbang.zero.util.JimUtils;
 
 import timber.log.Timber;
 

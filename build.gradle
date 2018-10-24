@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'com.novoda:bintray-release:0.8.0'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
 
@@ -56,4 +56,5 @@ ext{
     butterknifeVersion = '8.4.0'
     dagger_version = '2.16'
     glide_version = "4.7.1"
+    jojo_util = "0.03"
 }
