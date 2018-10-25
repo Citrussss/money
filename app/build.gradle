@@ -85,10 +85,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.github.stuxuhai:jpinyin:1.1.8'
-    implementation 'com.contrarywind:Android-PickerView:3.2.7'
+    implementation 'com.contrarywind:Android-PickerView:4.1.6'
     implementation 'com.haibin:calendarview:3.4.8'
 
     implementation 'com.sdsmdg.tastytoast:tastytoast:0.1.1'
     implementation "com.github.jby292837678:zero:${jojo_util}"
+    implementation 'com.facebook.rebound:rebound:0.3.8'
 
 }
