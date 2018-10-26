@@ -80,7 +80,7 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
         spring.setCurrentValue(0.5);
         spring.setEndValue(0);
 
-//        ArouterUtil.navigation(home);
+        ArouterUtil.navigation(home);
 //        addDisposable(api.login()
 //                .compose(new RestfulTransformer<>())
 //                .observeOn(AndroidSchedulers.mainThread())

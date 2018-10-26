@@ -9,7 +9,7 @@ import com.jby.money.inject.component.ActivityComponent;
 
 import timber.log.Timber;
 
-@Route(path = ActivityComponent.Router.home)
+//@Route(path = ActivityComponent.Router.home)
 public class HomeActivity extends BaseActivity<HomeModel> {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
