@@ -26,25 +26,34 @@ public abstract class IBaseEntity<ViewBinding extends ViewDataBinding> {
     private transient int var =BR.vm;
     private ViewBinding binding ;
 
-    public ViewBinding attach(ViewGroup viewGroup) {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(viewGroup.getContext()), getLayoutId(), null, false);
-        binding.setVariable(var,this);
-        binding.executePendingBindings();
-        return binding;
+    public ViewBinding attach(ViewGroup viewGroup,ViewBinding binding) {
+        this.binding = bind(viewGroup,binding);
+        this.binding.setVariable(var,this);
+        this.binding.executePendingBindings();
+        return this.binding;
 //        setContentView(dataBinding.getRoot());
     }
+    private ViewBinding bind(ViewGroup viewGroup,ViewBinding binding){
+        if(binding==null){
+            binding = DataBindingUtil.inflate(LayoutInflater.from(viewGroup.getContext()), getLayoutId(), viewGroup, false);
+        }
 
+        return binding;
+    }
     private LayoutHelper getLayoutHelper()  {
         if(layoutHelper==null)
             layoutHelper = findModelView(this.getClass());
         if (layoutHelper==null)throw new RuntimeException("add @LayoutHelper at you Activity:"+this.getClass());
         return layoutHelper;
     }
-    private  @LayoutRes
+    public   @LayoutRes
     int getLayoutId()  {
         int[] value = getLayoutHelper().value();
         int length = value.length;
-        return value[0];
+        return value[getIndexOfView()];
+    }
+    public int getIndexOfView(){
+        return 0;
     }
     /**
      * 寻找 当前类 或者父类中的注解
@@ -56,5 +65,8 @@ public abstract class IBaseEntity<ViewBinding extends ViewDataBinding> {
         LayoutHelper contentView = thisCls.getAnnotation(LayoutHelper.class);
         if (contentView == null) return findModelView(thisCls.getSuperclass());
         return contentView;
+    }
+    public void removeBind(){
+        this.binding=null;
     }
 }

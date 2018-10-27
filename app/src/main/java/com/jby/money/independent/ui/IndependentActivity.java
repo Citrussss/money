@@ -10,8 +10,13 @@ import com.jby.money.R;
 import com.jby.money.independent.annotation.LayoutHelper;
 import com.jby.money.independent.base.IBaseActivity;
 import com.jby.money.independent.recycler.adapter.IAdapter;
+import com.jby.money.independent.recycler.entity.IndependentEntity;
 import com.jby.money.inject.component.ActivityComponent;
 import com.jby.money.databinding.ActivityIdependBinding;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @name money
  * @class name：com.jby.money.independent.ui
@@ -32,7 +37,7 @@ public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> {
     public void setTest(String test) {
         this.test = test;
     }
-    private IAdapter adapter=new IAdapter();
+    private IAdapter<IndependentEntity> adapter=new IAdapter<>();
     private LinearLayoutManager layoutManager=new LinearLayoutManager(this);
 
     @Override
@@ -40,6 +45,10 @@ public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> {
         super.onCreate(savedInstanceState);
         getDataBinding().recyclerView.setLayoutManager(layoutManager);
         getDataBinding().recyclerView.setAdapter(adapter);
-
+        List<IndependentEntity> list=new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            list.add(new IndependentEntity("第："+i));
+        }
+        adapter.seteList(list);
     }
 }

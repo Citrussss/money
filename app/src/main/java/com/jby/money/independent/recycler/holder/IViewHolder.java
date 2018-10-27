@@ -1,12 +1,14 @@
 package com.jby.money.independent.recycler.holder;
 
 import android.databinding.ViewDataBinding;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.view.ViewGroup;
 
-import com.jby.money.independent.ui.IndependentEntity;
+import com.jby.money.base.utils.FunnyToast;
+import com.jby.money.independent.base.IBaseEntity;
+import com.jby.money.independent.recycler.entity.IndependentEntity;
+
+import timber.log.Timber;
 
 /**
  * @name money
@@ -19,13 +21,26 @@ import com.jby.money.independent.ui.IndependentEntity;
  * @class describe
  */
 @SuppressWarnings("unchecked")
-public class IViewHolder extends RecyclerView.ViewHolder {
-    private IndependentEntity entity;
+public class IViewHolder<E extends IBaseEntity> extends RecyclerView.ViewHolder {
+    private E e;
+    private ViewDataBinding dataBinding;
+    private  ViewGroup container;
+    private static int i=0;
     private IViewHolder(ViewGroup container, ViewDataBinding binding) {
         super(binding.getRoot());
+        dataBinding=binding;
+    }
+    public IViewHolder(E entity,ViewGroup container){
+        this(container,entity.attach(container,null));
+        this.e=entity;
+        this.container=container;
+        FunnyToast.message("IViewHolder:"+i++);
 
     }
-    IViewHolder(IndependentEntity entity,ViewGroup viewGroup){
-        this(viewGroup,entity.attach(viewGroup));
+    public void refresh(E e){
+        this.e.removeBind();
+        this.e=e;
+        dataBinding=e.attach(container,dataBinding);
+//        e.attach(container);
     }
 }
