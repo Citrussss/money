@@ -5,7 +5,7 @@ import android.os.Looper;
 import com.binding.model.App;
 import com.binding.model.util.BaseUtil;
 import com.sdsmdg.tastytoast.TastyToast;
-import com.union.bangbang.zero.ActivityManager;
+import com.union.bangbang.zero.AppUtil;
 
 /**
  * @name money
@@ -22,7 +22,7 @@ public class FunnyToast extends TastyToast {
         new Thread() {
             public void run() {
                 Looper.prepare();
-                makeText(ActivityManager.getInstance().peekActivity(), e.toString(), TastyToast.LENGTH_LONG, TastyToast.ERROR);
+                makeText(AppUtil.peekActivity(), e.toString(), TastyToast.LENGTH_LONG, TastyToast.ERROR);
                 Looper.loop();
             }
         }.start();
@@ -33,7 +33,7 @@ public class FunnyToast extends TastyToast {
             @Override
             public void run() {
                 Looper.prepare();
-                TastyToast.makeText(ActivityManager.getInstance().peekActivity(), o.toString(), TastyToast.LENGTH_LONG, TastyToast.INFO);
+                TastyToast.makeText(AppUtil.peekActivity(), o.toString(), TastyToast.LENGTH_LONG, TastyToast.INFO);
                 Looper.loop();
             }
         }.start();

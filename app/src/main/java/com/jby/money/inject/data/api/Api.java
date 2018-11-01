@@ -2,8 +2,8 @@ package com.jby.money.inject.data.api;
 
 
 
+import com.jby.money.inject.data.sql.InfoEntity;
 import com.jby.money.ui.user.UserEntity;
-import com.union.bangbang.zero.util.InfoEntity;
 
 import java.util.List;
 

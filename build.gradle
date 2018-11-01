@@ -56,5 +56,5 @@ ext{
     butterknifeVersion = '8.4.0'
     dagger_version = '2.16'
     glide_version = "4.7.1"
-    jojo_util = "0.03"
+    jojo_util = "0.05"
 }

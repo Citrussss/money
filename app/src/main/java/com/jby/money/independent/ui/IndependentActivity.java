@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.binding.model.util.BaseUtil;
 import com.jby.money.R;
 import com.jby.money.independent.annotation.LayoutHelper;
 import com.jby.money.independent.base.IBaseActivity;
@@ -13,6 +14,9 @@ import com.jby.money.independent.recycler.adapter.IAdapter;
 import com.jby.money.independent.recycler.entity.IndependentEntity;
 import com.jby.money.inject.component.ActivityComponent;
 import com.jby.money.databinding.ActivityIdependBinding;
+import com.union.bangbang.zero.toast.JoJoToast;
+import com.union.bangbang.zero.util.photo.RxFileViewer;
+import com.union.bangbang.zero.util.photo.RxFileViewerFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,5 +54,8 @@ public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> {
             list.add(new IndependentEntity("第："+i));
         }
         adapter.seteList(list);
+        RxFileViewer.build(this,RxFileViewerFragment.IMAGE).start().subscribe(file -> {
+            BaseUtil.toast(this,file.getAbsolutePath());
+        });
     }
 }

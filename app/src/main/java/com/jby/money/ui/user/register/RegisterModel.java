@@ -7,12 +7,10 @@ import android.view.View;
 import com.binding.model.model.ModelView;
 import com.binding.model.model.ViewModel;
 import com.jby.money.R;
-import com.jby.money.base.rxjava.RestfulTransformer;
 import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.databinding.ActivityRegisterBinding;
 import com.jby.money.inject.data.api.Api;
 import com.jby.money.ui.user.UserEntity;
-import com.union.bangbang.zero.util.audiorecord.LToast;
 
 import javax.inject.Inject;
 
@@ -41,6 +39,6 @@ public class RegisterModel extends ViewModel<RegisterActivity,ActivityRegisterBi
         getDataBinding().setParams(userEntity);
     }
     public void onRigisterClick(View view){
-        Disposable subscribe = api.register(userEntity).compose(new RestfulTransformer<>()).subscribe(LToast::message, FunnyToast::error);
+//        Disposable subscribe = api.register(userEntity).compose(new RestfulTransformer<>()).subscribe(LToast::message, FunnyToast::error);
     }
 }

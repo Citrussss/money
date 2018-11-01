@@ -6,6 +6,7 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 
 import com.jby.money.BR;
@@ -21,7 +22,7 @@ import com.jby.money.databinding.*;
  * @chang time
  * @class describe
  */
-public abstract class IBaseActivity<DataBinding extends ViewDataBinding> extends Activity{
+public abstract class IBaseActivity<DataBinding extends ViewDataBinding> extends FragmentActivity {
    private transient LayoutHelper layoutHelper;
    private transient int var =BR.vm;
     private DataBinding binding;

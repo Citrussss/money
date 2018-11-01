@@ -10,13 +10,13 @@ import com.jby.money.inject.component.DaggerAppComponent;
 import com.jby.money.inject.module.AppModule;
 import com.jby.money.ui.user.User;
 
-import com.union.bangbang.zero.ActivityManager;
+
+import com.union.bangbang.zero.AppUtil;
 
 public class MoneyApplication extends Application {
     private static AppComponent appComponent;
     private static MoneyApplication application;
     private static User user;
-    private ActivityManager activityManage=ActivityManager.getInstance();
     public static AppComponent getAppComponent() {
         return appComponent;
     }
@@ -24,7 +24,7 @@ public class MoneyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        activityManage.init(this);
+        AppUtil.getInstance().init(this);
         appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
         appComponent.inject(this);
         initARouter();
