@@ -1,43 +1,53 @@
 package com.jby.money.independent.base;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.os.Bundle;
 import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.jby.money.BR;
 import com.jby.money.independent.annotation.LayoutHelper;
+import com.union.bangbang.zero.AppUtil;
+
+import razerdp.basepopup.BasePopupWindow;
 
 /**
  * @name money
- * @class name：com.jby.money.independent.base
- * @class describe
  * @anthor bangbang QQ:740090077
- * @time 2018/10/26 10:49 PM
- * @change
- * @chang time
- * @class describe
+ * @time 2018/11/2 10:01 PM
+ * 只有编译器可能不骗你。
  */
-public abstract class IBaseEntity<ViewBinding extends ViewDataBinding> {
-    private transient LayoutHelper layoutHelper;
-    private transient int var =BR.vm;
-    private ViewBinding binding ;
 
-    public ViewBinding attach(ViewGroup viewGroup,ViewBinding binding) {
-        this.binding = bind(viewGroup,binding);
+
+public class IBasePopup<ViewBinding extends ViewDataBinding> extends BasePopupWindow {
+    private transient LayoutHelper layoutHelper;
+    private transient ViewBinding binding;
+    private transient int var =BR.vm;
+    public IBasePopup(Context context) {
+         super(context);
+    }
+    public ViewBinding attach(ViewGroup viewGroup, ViewBinding binding) {
+        if(binding==null){
+            binding = DataBindingUtil.inflate(LayoutInflater.from(viewGroup!=null?viewGroup.getContext():AppUtil.peekActivity()), getLayoutId(), null, false);
+        }
+        this.binding = binding;
         this.binding.setVariable(var,this);
         this.binding.executePendingBindings();
         return this.binding;
-//        setContentView(dataBinding.getRoot());
     }
-    private ViewBinding bind(ViewGroup viewGroup,ViewBinding binding){
-        if(binding==null){
-            binding = DataBindingUtil.inflate(LayoutInflater.from(viewGroup.getContext()), getLayoutId(), viewGroup, false);
-        }
-        return binding;
+    @Override
+    public View onCreateContentView() {
+        return getBinding().getRoot();
+    }
+
+    public @LayoutRes
+    int getLayoutId() {
+        int[] value = getLayoutHelper().value();
+        int length = value.length;
+        return value[getIndexOfView()];
     }
     private LayoutHelper getLayoutHelper()  {
         if(layoutHelper==null)
@@ -45,27 +55,18 @@ public abstract class IBaseEntity<ViewBinding extends ViewDataBinding> {
         if (layoutHelper==null)throw new RuntimeException("add @LayoutHelper at you Activity:"+this.getClass());
         return layoutHelper;
     }
-    public   @LayoutRes
-    int getLayoutId()  {
-        int[] value = getLayoutHelper().value();
-        int length = value.length;
-        return value[getIndexOfView()];
-    }
-    public int getIndexOfView(){
-        return 0;
-    }
-    /**
-     * 寻找 当前类 或者父类中的注解
-     * @param thisCls
-     * @return
-     */
     private static LayoutHelper findModelView(Class<?> thisCls) {
         if (thisCls == null) return null;
         LayoutHelper contentView = thisCls.getAnnotation(LayoutHelper.class);
         if (contentView == null) return findModelView(thisCls.getSuperclass());
         return contentView;
     }
-    public void removeBind(){
-        this.binding=null;
+    public int getIndexOfView(){
+        return 0;
+    }
+
+    public ViewBinding getBinding() {
+        if(binding==null)attach(null,null);
+        return binding;
     }
 }

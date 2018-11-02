@@ -10,6 +10,7 @@ import com.binding.model.util.BaseUtil;
 import com.jby.money.R;
 import com.jby.money.independent.annotation.LayoutHelper;
 import com.jby.money.independent.base.IBaseActivity;
+import com.jby.money.independent.popup.TestPopup;
 import com.jby.money.independent.recycler.adapter.IAdapter;
 import com.jby.money.independent.recycler.entity.IndependentEntity;
 import com.jby.money.inject.component.ActivityComponent;
@@ -20,6 +21,9 @@ import com.union.bangbang.zero.util.photo.RxFileViewerFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.Observable;
+import io.reactivex.disposables.Disposable;
 
 /**
  * @name money
@@ -43,7 +47,7 @@ public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> {
     }
     private IAdapter<IndependentEntity> adapter=new IAdapter<>();
     private LinearLayoutManager layoutManager=new LinearLayoutManager(this);
-
+    private TestPopup popup;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +58,10 @@ public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> {
             list.add(new IndependentEntity("第："+i));
         }
         adapter.seteList(list);
-        RxFileViewer.build(this,RxFileViewerFragment.IMAGE).start().subscribe(file -> {
-            BaseUtil.toast(this,file.getAbsolutePath());
-        });
+        popup=new TestPopup(this);
+        popup.showPopupWindow();
+       /* Disposable subscribe = RxFileViewer.build(this, RxFileViewerFragment.IMAGE).start().subscribe(file -> {
+            BaseUtil.toast(this, file.getAbsolutePath());
+        });*/
     }
 }
