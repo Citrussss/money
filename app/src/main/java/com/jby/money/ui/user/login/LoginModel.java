@@ -31,6 +31,7 @@ import okhttp3.OkHttpClient;
 import timber.log.Timber;
 
 import static com.jby.money.inject.component.ActivityComponent.Router.home;
+import static com.jby.money.inject.component.ActivityComponent.Router.image;
 import static com.jby.money.inject.component.ActivityComponent.Router.rigister;
 
 /**
@@ -77,7 +78,6 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
     public void onLoginClick(View view) {
         spring.setCurrentValue(0.5);
         spring.setEndValue(0);
-
         ArouterUtil.navigation(home);
 //        addDisposable(api.login()
 //                .compose(new RestfulTransformer<>())
@@ -87,7 +87,7 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
     }
 
     public void onRegisterClick(View view) {
-        ArouterUtil.navigation(rigister);
+        ArouterUtil.navigation(image);
     }
 
 

@@ -21,5 +21,6 @@
         <activity android:name=".ui.user.login.LoginActivity" />
         <activity android:name=".ui.user.register.RegisterActivity" />
         <activity android:name=".independent.ui.IndependentActivity" />
+        <activity android:name=".mvvm.ImageActivity" />
     </application>
 </manifest>

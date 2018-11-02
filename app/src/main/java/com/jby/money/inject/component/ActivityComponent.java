@@ -35,6 +35,7 @@ public interface ActivityComponent {
         String home = main + "home";
         String login = user+"login";
         String rigister = user +"register";
+        String image = main +"image";
 //        String sensor = main +"sensor";
     }
 }
