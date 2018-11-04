@@ -37,5 +37,5 @@ public class ImageActivity extends IBaseActivity<ActivityImageBinding> {
         viewModel.setPeopleName();
     }
     //ViewModel和Activity的对应关系是什么，一对一 还是多对一，或者一对多？
-    //观察者们应该写在哪，viewmodel不是持久的层吗啊啊啊啊啊
+    //观察者们应该写在哪，viewmodel不是持久的层吗啊啊啊啊啊X¥
 }

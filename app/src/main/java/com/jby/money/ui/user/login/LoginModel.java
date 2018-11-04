@@ -17,6 +17,7 @@ import com.jby.money.R;
 import com.jby.money.base.arouter.ArouterUtil;
 import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.databinding.ActivityLoginBinding;
+import com.jby.money.independent.rx.compose.ErrorTransformer;
 import com.jby.money.inject.data.api.Api;
 import com.jby.money.inject.data.sql.DatabaseApi;
 import com.jby.money.ui.user.UserEntity;
@@ -59,35 +60,18 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
     @Override
     public void attachView(Bundle savedInstanceState, LoginActivity loginActivity) {
         super.attachView(savedInstanceState, loginActivity);
-//        getDataBinding().scrollView.fullScroll( View.FOCUS_RIGHT);
-        springSystem = SpringSystem.create();
-        spring = springSystem.createSpring();
-        spring.setCurrentValue(0f);
-        spring.setSpringConfig(new SpringConfig(50,3));
-        spring.addListener(new SimpleSpringListener() {
-            @Override
-            public void onSpringUpdate(Spring spring) {
-                float value = (float) spring.getCurrentValue();
-                float scale = 1-0.5f*value;
-                getDataBinding().register.setScaleX(scale);
-                getDataBinding().register.setScaleY(scale);
-            }
-        });
+        getDataBinding().setParams(new UserEntity());
     }
 
     public void onLoginClick(View view) {
-        spring.setCurrentValue(0.5);
-        spring.setEndValue(0);
-        ArouterUtil.navigation(home);
-//        addDisposable(api.login()
-//                .compose(new RestfulTransformer<>())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe((userEntity -> getDataBinding().setParams(userEntity.get(0))),FunnyToast::error));
-//        ArouterUtil.navigation(home);
+        addDisposable(api.login(getDataBinding().getParams())
+                .compose(new ErrorTransformer<>())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(FunnyToast::message,FunnyToast::error));
     }
 
     public void onRegisterClick(View view) {
-        ArouterUtil.navigation(image);
+        ArouterUtil.navigation(rigister);
     }
 
 

@@ -22,11 +22,10 @@ public class FunnyToast extends TastyToast {
         new Thread() {
             public void run() {
                 Looper.prepare();
-                makeText(AppUtil.peekActivity(), e.toString(), TastyToast.LENGTH_LONG, TastyToast.ERROR);
+                makeText(AppUtil.peekActivity(), e.getMessage(), TastyToast.LENGTH_LONG, TastyToast.ERROR);
                 Looper.loop();
             }
         }.start();
-        BaseUtil.toast("");
     }
     public static void message(Object o) {
         new Thread() {

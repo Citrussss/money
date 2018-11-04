@@ -18,8 +18,8 @@ import retrofit2.http.POST;
 
 public interface Api {
 
-    @GET("/user/login")
-    Observable<InfoEntity<List<UserEntity>>> login();
+    @POST("/user/login")
+    Observable<ApiInfoEntity<UserEntity>> login(@Body UserEntity userEntity);
     @POST("/user/register")
-    Observable<InfoEntity<UserEntity>> register(@Body UserEntity userEntity);
+    Observable<ApiInfoEntity<UserEntity>> register(@Body UserEntity userEntity);
 }

@@ -25,6 +25,8 @@ android {
         ndk {
             abiFilters 'armeabi', 'x86'//'armeabi-v7a', 'armeabi-v8a','x86_64', 'mips', 'mips64'
         }
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
     }
 
     buildTypes {
@@ -97,6 +99,8 @@ dependencies {
     implementation ('com.github.tbruyelle:rxpermissions:0.10.2')
 
     implementation 'com.github.razerdp:BasePopup:2.0.9'
+
+//    implementation 'org.projectlombok:lombok:latest.release'
 
 //        force = true
 //    }

@@ -9,11 +9,17 @@ import com.binding.model.model.ViewModel;
 import com.jby.money.R;
 import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.databinding.ActivityRegisterBinding;
+import com.jby.money.independent.rx.compose.ErrorTransformer;
 import com.jby.money.inject.data.api.Api;
+import com.jby.money.inject.data.api.ApiInfoEntity;
+import com.jby.money.inject.data.sql.InfoEntity;
 import com.jby.money.ui.user.UserEntity;
 
 import javax.inject.Inject;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.ObservableTransformer;
 import io.reactivex.disposables.Disposable;
 
 /**
@@ -39,6 +45,8 @@ public class RegisterModel extends ViewModel<RegisterActivity,ActivityRegisterBi
         getDataBinding().setParams(userEntity);
     }
     public void onRigisterClick(View view){
-//        Disposable subscribe = api.register(userEntity).compose(new RestfulTransformer<>()).subscribe(LToast::message, FunnyToast::error);
+        Disposable subscribe = api.register(userEntity)
+                .compose(new ErrorTransformer<>())
+                .subscribe(FunnyToast::message, FunnyToast::error);
     }
 }
