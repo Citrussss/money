@@ -68,6 +68,7 @@ public class SensorModel extends ViewModel<SensorFragment, FragmentSensorBinding
     }
 
     public void onDestroy() {
+        if(sensorManager!=null)
         sensorManager.unregisterListener(sensorEventListener);
         super.onDestroy();
     }

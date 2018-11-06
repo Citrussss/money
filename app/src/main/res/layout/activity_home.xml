@@ -28,9 +28,11 @@
             app:cardElevation="5dp"
             app:contentPadding="2dp">
 
+
             <com.binding.model.view.radio.CheckRadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/input_normal_height"
+                android:visibility="gone"
                 android:background="@color/white"
                 android:orientation="horizontal"
                 app:position="@={vm.currentItem}">
@@ -76,6 +78,38 @@
                     android:text="我"
                     android:textSize="@dimen/small_text_size" />
             </com.binding.model.view.radio.CheckRadioGroup>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                app:tabBackground="@color/light_blue"
+                android:layout_height="@dimen/input_normal_height"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_red"
+                    android:text="123"
+                    android:icon="@drawable/home_navigation_home" />
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1234"
+                    android:icon="@drawable/home_navigation_clock" />
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1235"
+                    android:icon="@drawable/home_navigation_social" />
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:icon="@drawable/home_navigation_mine" />
+            </android.support.design.widget.TabLayout>
         </android.support.v7.widget.CardView>
 
     </LinearLayout>

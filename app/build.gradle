@@ -34,12 +34,15 @@ android {
             minifyEnabled false
             applicationIdSuffix ".money"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "API_HOST", "\"http://192.168.1.160:8080/\""
+            buildConfigField "String", "API_HOST", "\"http://101.132.113.231:8080/\""
             buildConfigField("String","weibo_appId","\"1938127481\"")
             buildConfigField("String","weibo_app_secret","\"ba2eda2cabc78df8ac21692c377edcd4\"")
         }
         release {
             minifyEnabled false
+            buildConfigField "String", "API_HOST", "\"http://192.168.1.160:8080/\""
+            buildConfigField("String","weibo_appId","\"1938127481\"")
+            buildConfigField("String","weibo_app_secret","\"ba2eda2cabc78df8ac21692c377edcd4\"")
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

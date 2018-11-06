@@ -16,85 +16,90 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:background="@color/light_gray"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/light_gray">
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:background="@drawable/login_item_white_bg"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <EditText
+                style="style/login_input_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_normal_height"
+                android:background="@null"
+                android:hint="账号"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:text="@={params.mobile}" />
+
+            <EditText
+                style="style/login_input_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_normal_height"
+                android:background="@null"
+                android:hint="密码"
+                android:imeOptions="actionGo"
+                android:inputType="textPassword"
+                android:text="@={params.password}" />
 
             <LinearLayout
-                android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:background="@drawable/login_item_white_bg"
-                android:orientation="vertical"
-                android:padding="15dp">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-                <EditText
-                    style="style/login_input_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/input_normal_height"
-                    android:background="@null"
-                    android:hint="账号"
-                    android:imeOptions="actionNext"
-                    android:inputType="phone"
-                    android:text="@={params.mobile}" />
-
-                <EditText
-                    style="style/login_input_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/input_normal_height"
-                    android:background="@null"
-                    android:hint="密码"
-                    android:imeOptions="actionGo"
-                    android:inputType="textPassword"
-                    android:text="@={params.password}" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/login"
-                        android:layout_width="0dp"
-                        android:layout_height="48dp"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/login_item_dark_green_bg"
-                        android:onClick="@{vm::onLoginClick}"
-                        android:text="登录"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/big_text_size" />
-
-                    <Button
-                        android:id="@+id/register"
-                        android:layout_width="0dp"
-                        android:layout_height="48dp"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/login_item_dark_green_bg"
-                        android:onClick="@{vm::onRegisterClick}"
-                        android:text="注册"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/big_text_size" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:text="忘记密码?" />
-
-                <ImageView
-                    android:layout_width="48dp"
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="0dp"
                     android:layout_height="48dp"
-                    android:layout_gravity="center"
-                    android:src="@mipmap/weibo" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/login_item_dark_green_bg"
+                    android:onClick="@{vm::onLoginClick}"
+                    android:text="登录"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/big_text_size" />
+
+                <Button
+                    android:id="@+id/register"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/login_item_dark_green_bg"
+                    android:onClick="@{vm::onRegisterClick}"
+                    android:text="注册"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/big_text_size" />
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="忘记密码?" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/weibo" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:onClick="@{vm::onSkipClick}"
+            android:background="@color/light_red" />
 
 
     </FrameLayout>

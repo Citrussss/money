@@ -34,8 +34,6 @@ public class IViewHolder<E extends IBaseEntity> extends RecyclerView.ViewHolder 
         this(container,entity.attach(container,null));
         this.e=entity;
         this.container=container;
-        FunnyToast.message("IViewHolder:"+i++);
-
     }
     public void refresh(E e){
         this.e.removeBind();

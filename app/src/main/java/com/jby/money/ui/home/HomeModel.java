@@ -3,6 +3,7 @@ package com.jby.money.ui.home;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.view.MenuItem;
 
@@ -27,10 +28,13 @@ public class HomeModel extends PagerModel<HomeActivity, ActivityHomeBinding, Hom
     @Override
     public void attachView(Bundle savedInstanceState, HomeActivity activity) {
         super.attachView(savedInstanceState, activity);
+        getDataBinding().tabLayout.setupWithViewPager(getDataBinding().viewPager);
         setRcHttp((offset1, refresh) -> Observable.range(0, 3)
                 .map(i -> new HomeEntity())
                 .toList()
                 .toObservable()
         );
+//        s.getPageTitle()
     }
+
 }

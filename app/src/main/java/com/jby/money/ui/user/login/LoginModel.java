@@ -79,4 +79,8 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
     public void onNext(UserEntity userEntity) {
 
     }
+    public void onSkipClick(View view){
+        ArouterUtil.navigation(home);
+//        finish();
+    }
 }

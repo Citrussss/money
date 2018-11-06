@@ -18,7 +18,7 @@ import com.jby.money.independent.base.IBaseEntity;
 @LayoutHelper(value ={ R.layout.holder_idepend,R.layout.holder_fuck})
 public class IndependentEntity  extends IBaseEntity {
     private String test;
-    private int id=(int)(Math.random()*2);;
+    private int id=(int)(Math.random()*2)*00;
     public IndependentEntity() {
     }
 
