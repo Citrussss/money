@@ -1,9 +1,13 @@
 package com.jby.money.independent.recycler.entity;
 
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+
 import com.jby.money.R;
 import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.independent.annotation.LayoutHelper;
 import com.jby.money.independent.base.IBaseEntity;
+import com.union.bangbang.zero.AppUtil;
 
 /**
  * @name money
@@ -15,10 +19,13 @@ import com.jby.money.independent.base.IBaseEntity;
  * @chang time
  * @class describe
  */
-@LayoutHelper(value ={ R.layout.holder_idepend,R.layout.holder_fuck})
-public class IndependentEntity  extends IBaseEntity {
+@LayoutHelper(value = {R.layout.holder_idepend, R.layout.holder_fuck})
+public class IndependentEntity extends IBaseEntity {
+    static int i = 0;
     private String test;
-    private int id=(int)(Math.random()*2)*00;
+    private String url = "https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E";
+    private int id = (int) i;
+
     public IndependentEntity() {
     }
 
@@ -28,7 +35,8 @@ public class IndependentEntity  extends IBaseEntity {
 
     @Override
     public int getIndexOfView() {
-        return id;
+        return getColor();
+
     }
 
     public String getTest() {
@@ -37,5 +45,18 @@ public class IndependentEntity  extends IBaseEntity {
 
     public void setTest(String test) {
         this.test = test;
+    }
+
+    public String getUrl() {
+        getColor();
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public int getColor() {
+        return i = i == 0 ? 1 : 0;
     }
 }

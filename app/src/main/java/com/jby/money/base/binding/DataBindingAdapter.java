@@ -102,10 +102,14 @@ public class DataBindingAdapter {
         Timber.i(url);
         Context context = imageView.getContext();
         Glide.with(context).clear(imageView);
+        RequestOptions options = new RequestOptions()
+                .centerCrop()
+                .priority(Priority.HIGH)//优先级
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE);//缓存策略
         Glide.with(context)
                 .load(url)
-//                .placeholder(R.mipmap.img_default2_normal)
-//                .error(R.mipmap.img_default2_normal)
+                .apply(options)
                 .into(imageView);
     }
 

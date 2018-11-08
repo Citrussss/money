@@ -19,7 +19,6 @@
         android:layout_height="match_parent"
         android:background="@color/light_gray">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +26,8 @@
             android:layout_margin="15dp"
             android:background="@drawable/login_item_white_bg"
             android:orientation="vertical"
-            android:padding="15dp">
+            android:padding="15dp"
+            android:visibility="visible">
 
             <EditText
                 style="style/login_input_edit"
@@ -98,8 +98,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
+            android:background="@color/light_red"
             android:onClick="@{vm::onSkipClick}"
-            android:background="@color/light_red" />
+            android:visibility="visible" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_red" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_blue" />
+            </LinearLayout>
+        </HorizontalScrollView>
 
 
     </FrameLayout>

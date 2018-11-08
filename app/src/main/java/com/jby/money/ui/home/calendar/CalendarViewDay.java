@@ -13,7 +13,7 @@ import static com.union.bangbang.zero.util.DateUtil.getYear;
 
 /**
  * @name money
- * @class name：com.jby.money.ui.home.calendar
+ * @class name：com.jby.money.ui.home_navigation.calendar
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/18 9:35 PM

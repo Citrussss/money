@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
 import com.binding.model.adapter.pager.FragmentAdapter;
@@ -13,6 +14,9 @@ import com.binding.model.model.ModelView;
 import com.jby.money.R;
 import com.jby.money.databinding.ActivityHomeBinding;
 import com.jby.money.inject.qualifier.manager.ActivityFragmentManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -28,13 +32,31 @@ public class HomeModel extends PagerModel<HomeActivity, ActivityHomeBinding, Hom
     @Override
     public void attachView(Bundle savedInstanceState, HomeActivity activity) {
         super.attachView(savedInstanceState, activity);
-        getDataBinding().tabLayout.setupWithViewPager(getDataBinding().viewPager);
         setRcHttp((offset1, refresh) -> Observable.range(0, 3)
                 .map(i -> new HomeEntity())
                 .toList()
                 .toObservable()
         );
-//        s.getPageTitle()
+        getDataBinding().bottomNavigation.setOnNavigationItemSelectedListener(this::onTabItemSelected);
+        getDataBinding().viewPager.addOnPageChangeListener(this);
+    }
+
+    public void onPageSelected(int position){
+        switch (position){
+            case 0:getDataBinding().bottomNavigation.setSelectedItemId(R.id.one);break;
+            case 1:getDataBinding().bottomNavigation.setSelectedItemId(R.id.two);break;
+            case 2:getDataBinding().bottomNavigation.setSelectedItemId(R.id.three);break;
+            case 3:getDataBinding().bottomNavigation.setSelectedItemId(R.id.four);break;
+        }
+    }
+    private boolean onTabItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.one:getDataBinding().viewPager.setCurrentItem(0);break;
+            case R.id.two:getDataBinding().viewPager.setCurrentItem(1);break;
+            case R.id.three:getDataBinding().viewPager.setCurrentItem(2);break;
+            case R.id.four:getDataBinding().viewPager.setCurrentItem(3);break;
+        }
+        return true;
     }
 
 }

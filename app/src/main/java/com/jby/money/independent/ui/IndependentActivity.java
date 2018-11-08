@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -14,12 +15,17 @@ import com.jby.money.independent.base.IBaseActivity;
 import com.jby.money.independent.popup.TestPopup;
 import com.jby.money.independent.recycler.adapter.IAdapter;
 import com.jby.money.independent.recycler.entity.IndependentEntity;
+import com.jby.money.independent.recycler.manager.XLayoutManager;
 import com.jby.money.independent.recycler.touchhelp.SideViewHelper;
 import com.jby.money.inject.component.ActivityComponent;
 import com.jby.money.databinding.ActivityIdependBinding;
+import com.jzxiang.pickerview.TimePickerDialog;
+import com.jzxiang.pickerview.data.Type;
+import com.jzxiang.pickerview.listener.OnDateSetListener;
 import com.union.bangbang.zero.toast.JoJoToast;
 import com.union.bangbang.zero.util.photo.RxFileViewer;
 import com.union.bangbang.zero.util.photo.RxFileViewerFragment;
+import com.zyyoona7.wheel.WheelView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +45,7 @@ import io.reactivex.disposables.Disposable;
  */
 @LayoutHelper(value = R.layout.activity_idepend)
 @Route(path = ActivityComponent.Router.home)
-public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> {
+public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> implements OnDateSetListener {
     private String test ="12222";
     public String getTest() {
         return test;
@@ -48,24 +54,30 @@ public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> {
         this.test = test;
     }
     private IAdapter<IndependentEntity> adapter=new IAdapter<>();
-    private LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+    private XLayoutManager layoutManager=new XLayoutManager();
     private TestPopup popup;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getDataBinding().recyclerView.setLayoutManager(layoutManager);
         getDataBinding().recyclerView.setAdapter(adapter);
+        LinearSnapHelper helper = new LinearSnapHelper();
+        helper.attachToRecyclerView(getDataBinding().recyclerView);
         List<IndependentEntity> list=new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             list.add(new IndependentEntity("第："+i));
         }
-        ItemTouchHelper helper =new ItemTouchHelper(new SideViewHelper());
-        helper.attachToRecyclerView(getDataBinding().recyclerView);
+//        ItemTouchHelper helper =new ItemTouchHelper(new SideViewHelper());
+//        helper.attachToRecyclerView(getDataBinding().recyclerView);
         adapter.seteList(list);
-        popup=new TestPopup(this);
-        popup.showPopupWindow();
        /* Disposable subscribe = RxFileViewer.build(this, RxFileViewerFragment.IMAGE).start().subscribe(file -> {
             BaseUtil.toast(this, file.getAbsolutePath());
         });*/
+    }
+
+
+    @Override
+    public void onDateSet(TimePickerDialog timePickerView, long millseconds) {
+
     }
 }

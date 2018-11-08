@@ -32,7 +32,7 @@ public interface ActivityComponent {
         String main = "/main/";
         String user = "/user/";
         String startup = main + "startup";
-        String home = main + "home";
+        String home = main + "home_navigation";
         String login = user+"login";
         String rigister = user +"register";
         String image = main +"image";
