@@ -6,6 +6,7 @@ import android.view.View;
 import com.binding.model.adapter.IEventAdapter;
 import com.binding.model.layout.recycler.RecyclerModel;
 import com.binding.model.model.ModelView;
+import com.binding.model.model.request.RecyclerStatus;
 import com.jby.money.R;
 import com.jby.money.databinding.FragmentRecordBinding;
 import com.jby.money.inject.data.sql.DatabaseApi;
@@ -38,7 +39,7 @@ public class RecordModel extends RecyclerModel<RecordFragment, FragmentRecordBin
     }
 
     public void onRefreshClick(View view) {
-        onHttp(3);
+        onHttp(RecyclerStatus.resumeError);
     }
 
 

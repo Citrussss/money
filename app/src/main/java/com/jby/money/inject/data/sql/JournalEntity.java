@@ -13,6 +13,7 @@ import com.union.bangbang.zero.util.JimUtils;
 
 import timber.log.Timber;
 
+
 @ModelView(R.layout.holder_journal)
 public class JournalEntity extends DetailEntity {
 

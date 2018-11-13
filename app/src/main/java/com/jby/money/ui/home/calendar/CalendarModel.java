@@ -15,7 +15,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
-import timber.log.Timber;
+
 
 @ModelView(R.layout.fragment_calendar)
 public class CalendarModel extends RecyclerModel<CalendarFragment, FragmentCalendarBinding, JournalEntity> implements CalendarView.OnCalendarSelectListener {
@@ -27,29 +27,18 @@ public class CalendarModel extends RecyclerModel<CalendarFragment, FragmentCalen
     @Override
     public void attachView(Bundle savedInstanceState, CalendarFragment fragment) {
         super.attachView(savedInstanceState, fragment);
-        Map<String, Calendar> mSchemeDates = new HashMap<>();
-        Calendar calendar = new Calendar();
         initData();
-        getDataBinding().calendarView.setSchemeDate(mSchemeDates);
         getDataBinding().calendarView.setOnCalendarSelectListener(this);
     }
 
     @Override
     public void onCalendarOutOfRange(Calendar calendar) {
-        try {
-            Timber.w("onCalendarOutOfRange" + calendar.toString());
-        } catch (Exception e) {
-            Timber.e(e);
-        }
+
     }
 
     @Override
     public void onCalendarSelect(Calendar calendar, boolean isClick) {
-        try {
-            Timber.w("onCalendarOutOfRange" + calendar.toString());
-        } catch (Exception e) {
-            Timber.e(e);
-        }
+
     }
     private Calendar getSchemeCalendar(int year, int month, int day, int color, String text) {
         Calendar calendar = new Calendar();

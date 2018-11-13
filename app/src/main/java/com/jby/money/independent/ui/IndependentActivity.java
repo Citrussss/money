@@ -31,7 +31,7 @@ import java.util.List;
  * @class describe
  */
 @LayoutHelper(value = R.layout.activity_idepend)
-@Route(path = ActivityComponent.Router.home)
+//@Route(path = ActivityComponent.Router.home)
 public class IndependentActivity extends IBaseActivity<ActivityIdependBinding> implements OnDateSetListener {
     private String test ="12222";
     public String getTest() {

@@ -1,6 +1,8 @@
 package com.jby.money.base.view.calendar.custom;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,6 +12,7 @@ import android.view.View;
 
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.MonthView;
+import com.jby.money.R;
 
 /**
  * 演示一个变态需求的月视图
@@ -116,6 +119,8 @@ public class CustomMonthView extends MonthView {
         int cx = x + mItemWidth / 2;
         int cy = y + mItemHeight / 2;
         canvas.drawCircle(cx, cy, mRadius, mSelectedPaint);
+        canvas.drawText(calendar.getScheme(),x,y,mTextPaint);
+
         return true;
     }
 
@@ -128,8 +133,7 @@ public class CustomMonthView extends MonthView {
         } else {
             mPointPaint.setColor(Color.GRAY);
         }
-
-        canvas.drawCircle(x + mItemWidth / 2, y + mItemHeight - 3 * mPadding, mPointRadius, mPointPaint);
+         canvas.drawCircle(x + mItemWidth / 2, y + mItemHeight - 3 * mPadding, mPointRadius, mPointPaint);
     }
 
     @Override
@@ -187,6 +191,9 @@ public class CustomMonthView extends MonthView {
                             calendar.isCurrentMonth() ? !TextUtils.isEmpty(calendar.getSolarTerm()) ? mSolarTermTextPaint  :
                                     mCurMonthLunarTextPaint : mOtherMonthLunarTextPaint);
         }
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.home_1_true);
+//        canvas.drawBitmap(bitmap,x+(mItemWidth-bitmap.getWidth())/2,y,mPointPaint);
+
     }
 
     /**
