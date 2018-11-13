@@ -26,7 +26,6 @@ import com.bumptech.glide.request.transition.Transition;
 
 import java.io.File;
 
-import timber.log.Timber;
 
 
 /**
@@ -52,16 +51,18 @@ public class DataBindingAdapter {
                 .into(new SimpleTarget<Drawable>() {
                     @Override
                     public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                             view.setBackground(resource);
-                        else view.setBackgroundDrawable(resource);
+                        } else {
+                            view.setBackgroundDrawable(resource);
+                        }
                     }
                 });
     }
 
     @BindingAdapter("file")
     public static void setFilePath(ImageView view, String path) {
-            if (Patterns.WEB_URL.matcher(path).matches()) {
+        if (Patterns.WEB_URL.matcher(path).matches()) {
             Glide.with(view.getContext()).load(path).into(view);
         } else {
             Glide.with(view.getContext()).load(new File(path)).into(view);
@@ -70,7 +71,7 @@ public class DataBindingAdapter {
 
     @BindingAdapter("background_file")
     public static void setBackGroudFile(ImageView view, String url) {
-        if (url == null) return;
+        if (url == null) { return; }
         Context mContext = view.getContext();
         Glide.with(mContext)
                 .load(new File(url))
@@ -85,7 +86,6 @@ public class DataBindingAdapter {
     }
 
 
-
     //    --------------------------ProgressBar------------------------------
     @BindingAdapter("android:secondaryProgress")
     public static void setSecondaryProgress(ProgressBar bar, int progress) {
@@ -95,8 +95,9 @@ public class DataBindingAdapter {
     //    --------------------------ImageView------------------------
     @BindingAdapter("src")
     public static void setImageDrawable(ImageView imageView, String url) {
-        if (TextUtils.isEmpty(url)) return;
-        Timber.i(url);
+        if (TextUtils.isEmpty(url)) {
+            return;
+        }
         Context context = imageView.getContext();
         Glide.with(context).clear(imageView);
         RequestOptions options = new RequestOptions()
@@ -129,7 +130,6 @@ public class DataBindingAdapter {
                 .apply(options)
                 .into(imageView);
     }
-
 
 
     @BindingAdapter("company_head")
@@ -199,7 +199,7 @@ public class DataBindingAdapter {
 
     @BindingAdapter("android:src")
     public static void setImageDrawable(ImageView view, @DrawableRes int mipmapId) {
-        if (mipmapId != 0) view.setImageResource(mipmapId);
+        if (mipmapId != 0) {view.setImageResource(mipmapId);}
     }
 
 
@@ -220,16 +220,12 @@ public class DataBindingAdapter {
     }
 
 
-
     @BindingAdapter({"android:text"})
     public static void setText(TextView textView, SpannableStringBuilder style) {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setText(style);
     }
 //
-
-
-
 
 
     @BindingAdapter("onTouch")
