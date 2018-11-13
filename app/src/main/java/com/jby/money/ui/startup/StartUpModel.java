@@ -12,7 +12,6 @@ import com.jby.money.databinding.ActivityStartupBinding;
 
 import javax.inject.Inject;
 
-import static com.jby.money.inject.component.ActivityComponent.Router.home;
 import static com.jby.money.inject.component.ActivityComponent.Router.login;
 
 @ModelView(R.layout.activity_startup)

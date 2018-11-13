@@ -3,19 +3,15 @@ package com.jby.money.inject.data.sql;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import com.binding.model.App;
-import com.jby.money.inject.data.params.LoginParams;
 import com.raizlabs.android.dbflow.rx2.language.RXSQLite;
 import com.raizlabs.android.dbflow.sql.language.Select;
 import com.raizlabs.android.dbflow.sql.language.Where;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.Scheduler;
 import io.reactivex.schedulers.Schedulers;
 
 public class DatabaseApi {

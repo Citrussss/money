@@ -12,7 +12,6 @@ import com.jby.money.inject.qualifier.context.ActivityContext;
 import com.jby.money.inject.qualifier.manager.ActivityFragmentManager;
 import com.jby.money.inject.scope.ActivityScope;
 
-
 import dagger.Module;
 import dagger.Provides;
 

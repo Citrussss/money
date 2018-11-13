@@ -2,8 +2,6 @@ package com.jby.money.base.utils;
 
 import android.os.Looper;
 
-import com.binding.model.App;
-import com.binding.model.util.BaseUtil;
 import com.sdsmdg.tastytoast.TastyToast;
 import com.union.bangbang.zero.AppUtil;
 

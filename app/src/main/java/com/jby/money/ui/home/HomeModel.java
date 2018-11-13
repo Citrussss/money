@@ -1,11 +1,7 @@
 package com.jby.money.ui.home;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
 import com.binding.model.adapter.pager.FragmentAdapter;
@@ -14,9 +10,6 @@ import com.binding.model.model.ModelView;
 import com.jby.money.R;
 import com.jby.money.databinding.ActivityHomeBinding;
 import com.jby.money.inject.qualifier.manager.ActivityFragmentManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.inject.Inject;
 

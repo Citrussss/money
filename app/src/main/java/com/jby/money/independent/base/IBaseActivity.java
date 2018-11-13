@@ -1,6 +1,5 @@
 package com.jby.money.independent.base;
 
-import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.view.LayoutInflater;
 
 import com.jby.money.BR;
 import com.jby.money.independent.annotation.LayoutHelper;
-import com.jby.money.databinding.*;
 /**
  * @name money
  * @class name：com.jby.money.independent.base

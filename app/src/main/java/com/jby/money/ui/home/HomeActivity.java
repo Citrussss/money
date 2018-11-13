@@ -3,9 +3,7 @@ package com.jby.money.ui.home;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jby.money.base.cycle.BaseActivity;
-import com.jby.money.inject.component.ActivityComponent;
 
 import timber.log.Timber;
 

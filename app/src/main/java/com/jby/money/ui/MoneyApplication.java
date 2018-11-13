@@ -3,14 +3,11 @@ package com.jby.money.ui;
 import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.binding.model.App;
 import com.jby.money.BuildConfig;
 import com.jby.money.inject.component.AppComponent;
 import com.jby.money.inject.component.DaggerAppComponent;
 import com.jby.money.inject.module.AppModule;
 import com.jby.money.ui.user.User;
-
-
 import com.union.bangbang.zero.AppUtil;
 
 public class MoneyApplication extends Application {

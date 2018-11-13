@@ -1,10 +1,7 @@
 package com.jby.money.independent.recycler.manager;
 
-import android.content.Context;
 import android.graphics.RectF;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
 import android.view.View;
 
 /**

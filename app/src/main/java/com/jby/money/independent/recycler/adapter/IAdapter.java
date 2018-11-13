@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
-import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.independent.base.IBaseEntity;
 import com.jby.money.independent.recycler.holder.IViewHolder;
 

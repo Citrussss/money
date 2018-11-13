@@ -4,14 +4,9 @@ package com.jby.money.ui.user.login;
 import android.os.Bundle;
 import android.view.View;
 
-import com.binding.model.cycle.MainLooper;
 import com.binding.model.model.ModelView;
 import com.binding.model.model.ViewHttpModel;
-import com.binding.model.model.ViewModel;
-import com.binding.model.util.BaseUtil;
-import com.facebook.rebound.SimpleSpringListener;
 import com.facebook.rebound.Spring;
-import com.facebook.rebound.SpringConfig;
 import com.facebook.rebound.SpringSystem;
 import com.jby.money.R;
 import com.jby.money.base.arouter.ArouterUtil;
@@ -19,20 +14,13 @@ import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.databinding.ActivityLoginBinding;
 import com.jby.money.independent.rx.compose.ErrorTransformer;
 import com.jby.money.inject.data.api.Api;
-import com.jby.money.inject.data.sql.DatabaseApi;
 import com.jby.money.ui.user.UserEntity;
 
 import javax.inject.Inject;
 
-import io.reactivex.Scheduler;
-import io.reactivex.android.MainThreadDisposable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
-import okhttp3.OkHttpClient;
-import timber.log.Timber;
 
 import static com.jby.money.inject.component.ActivityComponent.Router.home;
-import static com.jby.money.inject.component.ActivityComponent.Router.image;
 import static com.jby.money.inject.component.ActivityComponent.Router.rigister;
 
 /**

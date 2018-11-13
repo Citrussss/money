@@ -1,13 +1,8 @@
 package com.jby.money.independent.recycler.entity;
 
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-
 import com.jby.money.R;
-import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.independent.annotation.LayoutHelper;
 import com.jby.money.independent.base.IBaseEntity;
-import com.union.bangbang.zero.AppUtil;
 
 /**
  * @name money

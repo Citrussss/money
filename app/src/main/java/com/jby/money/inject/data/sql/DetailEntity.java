@@ -1,6 +1,5 @@
 package com.jby.money.inject.data.sql;
 
-import com.binding.model.model.ModelView;
 import com.jby.money.inject.module.DataModule;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;

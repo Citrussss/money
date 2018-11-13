@@ -1,11 +1,9 @@
 package com.jby.money.ui.home.calendar;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.binding.model.layout.recycler.RecyclerModel;
 import com.binding.model.model.ModelView;
-import com.binding.model.util.BaseUtil;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarView;
 import com.jby.money.R;

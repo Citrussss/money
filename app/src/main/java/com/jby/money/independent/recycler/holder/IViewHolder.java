@@ -4,11 +4,7 @@ import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.jby.money.base.utils.FunnyToast;
 import com.jby.money.independent.base.IBaseEntity;
-import com.jby.money.independent.recycler.entity.IndependentEntity;
-
-import timber.log.Timber;
 
 /**
  * @name money

@@ -3,9 +3,7 @@ package com.jby.money.ui.user;
 
 import com.binding.model.data.encrypt.SingleTransParams;
 import com.binding.model.model.ViewInflate;
-import com.binding.model.model.inter.Inflate;
 import com.google.gson.Gson;
-import com.jby.money.inject.data.api.ApiParams;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;

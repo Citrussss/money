@@ -10,7 +10,6 @@ import android.os.Bundle;
 import com.binding.model.App;
 import com.binding.model.model.ModelView;
 import com.binding.model.model.ViewModel;
-import com.binding.model.util.BaseUtil;
 import com.jby.money.R;
 import com.jby.money.databinding.FragmentSensorBinding;
 

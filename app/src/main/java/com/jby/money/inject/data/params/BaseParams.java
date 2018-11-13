@@ -1,6 +1,5 @@
 package com.jby.money.inject.data.params;
 
-import com.jby.money.ui.MoneyApplication;
 import com.jby.money.ui.user.User;
 
 /**
