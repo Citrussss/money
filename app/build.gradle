@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.jby"
+        applicationId "com.king"
         minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
         versionCode version_code
@@ -39,7 +39,7 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            applicationIdSuffix ".money"
+            applicationIdSuffix ".todo"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "API_HOST", "\"http://101.132.113.231:8080/\""
             buildConfigField("String", "weibo_appId", "\"1938127481\"")
