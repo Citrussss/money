@@ -2,7 +2,7 @@ package com.king.todo.inject.data.sql;
 
 /**
  * @name money
- * @class name：com.jby.money.inject.data.sql
+ * @class name：com.king.todo.inject.data.sql
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/4 1:26 PM

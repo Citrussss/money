@@ -6,7 +6,7 @@ import com.king.todo.independent.base.IBaseEntity;
 
 /**
  * @name money
- * @class name：com.jby.money.independent.ui
+ * @class name：com.king.todo.independent.ui
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/26 10:42 PM

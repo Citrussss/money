@@ -9,7 +9,7 @@ import android.support.v4.content.ContextCompat;
 
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.MonthView;
-import com.jby.money.R;
+import com.king.todo.R;
 import com.union.bangbang.zero.AppUtil;
 
 import static com.binding.model.App.getCurrentActivity;

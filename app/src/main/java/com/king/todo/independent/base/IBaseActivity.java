@@ -12,7 +12,7 @@ import com.king.todo.BR;
 import com.king.todo.independent.annotation.LayoutHelper;
 /**
  * @name money
- * @class name：com.jby.money.independent.base
+ * @class name：com.king.todo.independent.base
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/26 9:43 PM

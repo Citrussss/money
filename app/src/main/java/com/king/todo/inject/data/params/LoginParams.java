@@ -2,7 +2,7 @@ package com.king.todo.inject.data.params;
 
 /**
  * @name money
- * @class name：com.jby.money.inject.data.params
+ * @class name：com.king.todo.inject.data.params
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/4 1:01 PM

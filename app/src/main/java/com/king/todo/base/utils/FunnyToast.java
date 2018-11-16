@@ -7,7 +7,7 @@ import com.union.bangbang.zero.AppUtil;
 
 /**
  * @name money
- * @class name：com.jby.money.base.utils
+ * @class name：com.king.todo.base.utils
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/24 10:06 PM

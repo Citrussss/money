@@ -8,7 +8,7 @@ import android.widget.HorizontalScrollView;
 
 /**
  * @name money
- * @class name：com.jby.money.base.view.group.scroll
+ * @class name：com.king.todo.base.view.group.scroll
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/25 10:05 PM

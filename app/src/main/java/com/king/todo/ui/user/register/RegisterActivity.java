@@ -6,7 +6,7 @@ import com.king.todo.inject.component.ActivityComponent;
 
 /**
  * @name money
- * @class name：com.jby.money.ui.user.register
+ * @class name：com.king.todo.ui.user.register
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/17 8:58 PM

@@ -4,7 +4,7 @@ import com.king.todo.inject.data.sql.UserEntity;
 
 /**
  * @name money
- * @class name：com.jby.money.ui.user
+ * @class name：com.king.todo.ui.user
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/4 1:00 PM

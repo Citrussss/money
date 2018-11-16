@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 /**
  * @name money
- * @class name：com.jby.money.independent.annotation
+ * @class name：com.king.todo.independent.annotation
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/26 9:45 PM

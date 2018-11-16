@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * @name money
- * @class name：com.jby.money.independent.recycler.adapter
+ * @class name：com.king.todo.independent.recycler.adapter
  * @class describe
  * @anthor bangbang QQ:740090077
  * @time 2018/10/26 10:16 PM
