@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.jby.money.independent.ui.IndependentActivity" />
+            type="com.king.todo.independent.ui.IndependentActivity" />
     </data>
 
     <LinearLayout

@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.jby.money.ui.home.mine.HomeMineModel" />
+            type="com.king.todo.ui.home.mine.HomeMineModel" />
     </data>
 
     <android.support.v7.widget.LinearLayoutCompat

@@ -3,7 +3,7 @@
     <data>
         <variable
             name="vm"
-            type="com.jby.money.independent.popup.TestPopup"/>
+            type="com.king.todo.independent.popup.TestPopup"/>
     </data>
     <FrameLayout
         android:layout_width="match_parent"

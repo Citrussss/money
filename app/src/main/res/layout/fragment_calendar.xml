@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.jby.money.ui.home.calendar.CalendarModel" />
+            type="com.king.todo.ui.home.calendar.CalendarModel" />
     </data>
 
     <com.haibin.calendarview.CalendarLayout

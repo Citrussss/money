@@ -3,7 +3,7 @@
     <data>
         <variable
             name="vm"
-            type="com.jby.money.independent.recycler.entity.IndependentEntity"/>
+            type="com.king.todo.independent.recycler.entity.IndependentEntity"/>
     </data>
     <FrameLayout
         android:layout_width="match_parent"

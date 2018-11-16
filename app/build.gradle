@@ -28,7 +28,14 @@ android {
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
 
     }
-
+    signingConfigs {
+        config {
+            keyAlias 'todo'
+            keyPassword 'tododo'
+            storeFile file('../todo.jks')
+            storePassword 'tododo'
+        }
+    }
     buildTypes {
         debug {
             minifyEnabled false
@@ -105,7 +112,10 @@ dependencies {
     implementation 'com.github.zyyoona7:wheelview:1.0.4'
     implementation 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
     implementation 'com.jakewharton.timber:timber:4.5.1'
-
+//---------------------------------------------------------
+    //高德地图
+    implementation 'com.amap.api:location:latest.integration'
+//_________________________________________________________
 //    implementation 'org.projectlombok:lombok:latest.release'
 
 //        force = true

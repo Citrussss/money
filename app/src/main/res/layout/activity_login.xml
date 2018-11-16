@@ -6,11 +6,11 @@
 
         <variable
             name="vm"
-            type="com.jby.money.ui.user.login.LoginModel" />
+            type="com.king.todo.ui.user.login.LoginModel" />
 
         <variable
             name="params"
-            type="com.jby.money.ui.user.UserEntity" />
+            type="com.king.todo.ui.user.UserEntity" />
     </data>
 
 

@@ -6,11 +6,11 @@
 
         <variable
             name="vm"
-            type="com.jby.money.ui.home.record.RecordModel" />
+            type="com.king.todo.ui.home.record.RecordModel" />
 
         <variable
             name="entity"
-            type="com.jby.money.inject.data.sql.JournalEntity" />
+            type="com.king.todo.inject.data.sql.JournalEntity" />
     </data>
     <FrameLayout
         android:layout_width="match_parent"

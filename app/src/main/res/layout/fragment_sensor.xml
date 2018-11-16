@@ -5,7 +5,7 @@
 
         <variable
             name="vm"
-            type="com.jby.money.ui.home.sensor.SensorModel" />
+            type="com.king.todo.ui.home.sensor.SensorModel" />
     </data>
 
     <LinearLayout
