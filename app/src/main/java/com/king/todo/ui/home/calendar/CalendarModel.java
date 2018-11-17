@@ -47,6 +47,7 @@ public class CalendarModel extends RecyclerModel<CalendarFragment, FragmentCalen
         calendar.setDay(day);
         calendar.setSchemeColor(color);//如果单独标记颜色、则会使用这个颜色
         calendar.setScheme(text);
+//        calendar.addScheme(scheme);
         return calendar;
     }
     protected void initData() {

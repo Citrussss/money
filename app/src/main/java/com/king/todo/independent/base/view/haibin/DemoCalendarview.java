@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 
 import com.haibin.calendarview.Calendar;
@@ -67,7 +68,9 @@ public class DemoCalendarview extends MonthView {
     @Override
     protected void onDrawText(Canvas canvas, Calendar calendar, int x, int y, boolean hasScheme, boolean isSelected) {
             int size =Math.min(mItemHeight,mItemWidth);
-        canvas.drawArc(x,y,x+size,x+size,0,360,true,textPaint);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            canvas.drawArc(x,y,x+size,x+size,0,360,true,textPaint);
+        }
         canvas.drawText(String.valueOf(calendar.getDay()), x+mItemWidth/2, y+mItemHeight/2, textPaint);
     }
 
