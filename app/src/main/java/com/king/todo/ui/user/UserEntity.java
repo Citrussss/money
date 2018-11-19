@@ -1,6 +1,8 @@
 package com.king.todo.ui.user;
 
 
+import android.databinding.ObservableField;
+
 import com.binding.model.data.encrypt.SingleTransParams;
 import com.binding.model.model.ViewInflate;
 import com.google.gson.Gson;
@@ -22,19 +24,22 @@ public class UserEntity extends ViewInflate implements SingleTransParams {
 
     /**
      * id : 1
-     * mobile : 111
-     * password : 22
+     * mobile : 17857025659
+     * name : null
+     * password : 123456
      */
 
-    private int id;
+    private Integer id;
     private String mobile;
+    private String name;
     private String password;
 
-    public int getId() {
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -44,6 +49,14 @@ public class UserEntity extends ViewInflate implements SingleTransParams {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
