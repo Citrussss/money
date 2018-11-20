@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 
@@ -15,12 +16,14 @@ import com.union.bangbang.zero.AppUtil;
 
 import static com.binding.model.App.getCurrentActivity;
 
-public class DemoCalendarview extends MonthView {
-    private Paint textPaint;
+public class CheeseMonthView extends MonthView {
+    private Paint currentMonthTextPaint;
+    private Paint notCurrentMonthTexrPaint;
+    private int textBlack = 0xff333333;
+    private int textGray = 0xff999999;
+    private int yellow = 0xFFF4B33F;
 
-    private int indigoBlue;
-    private int yellow =0xF4B33F;
-    public DemoCalendarview(Context context) {
+    public CheeseMonthView(Context context) {
         super(context);
         initColor();
         initPaint();
@@ -38,7 +41,9 @@ public class DemoCalendarview extends MonthView {
      */
     @Override
     protected boolean onDrawSelected(Canvas canvas, Calendar calendar, int x, int y, boolean hasScheme) {
-//        canvas.drawText(String.valueOf(calendar.getDay()), x, y, textPaint);
+        float width = x + mItemWidth / 2;
+        float height = y + mItemHeight / 2 - mesureTextHeght() / 2 + currentMonthTextPaint.getFontMetrics().bottom;
+        canvas.drawCircle(width, height, (float) (currentMonthTextPaint.measureText("30") * 1.5), notCurrentMonthTexrPaint);
         return false;
     }
 
@@ -53,6 +58,9 @@ public class DemoCalendarview extends MonthView {
     @Override
     protected void onDrawScheme(Canvas canvas, Calendar calendar, int x, int y) {
 //        canvas.drawText(String.valueOf(calendar.getDay()), x, y, textPaint);
+        float width = x + mItemWidth / 2;
+        float height = y + mItemHeight / 2 + mesureTextHeght();
+        canvas.drawCircle(width, height, 5, currentMonthTextPaint);
     }
 
     /**
@@ -67,28 +75,37 @@ public class DemoCalendarview extends MonthView {
      */
     @Override
     protected void onDrawText(Canvas canvas, Calendar calendar, int x, int y, boolean hasScheme, boolean isSelected) {
-            int size =Math.min(mItemHeight,mItemWidth);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            canvas.drawArc(x,y,x+size,x+size,0,360,true,textPaint);
-        }
-        canvas.drawText(String.valueOf(calendar.getDay()), x+mItemWidth/2, y+mItemHeight/2, textPaint);
+        canvas.drawText(String.valueOf(calendar.getDay()), x + mItemWidth / 2, y + mItemHeight / 2, calendar.isCurrentMonth() ? currentMonthTextPaint : notCurrentMonthTexrPaint);
     }
 
     private void initPaint() {
-        textPaint = new Paint();
-        textPaint.setAntiAlias(true);
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setColor(indigoBlue);
-        textPaint.setFakeBoldText(true);
-        textPaint.setTextSize(dip2px(AppUtil.peekActivity(), 12));
+        currentMonthTextPaint = new Paint();
+        currentMonthTextPaint.setAntiAlias(true);
+        currentMonthTextPaint.setTextAlign(Paint.Align.CENTER);
+        currentMonthTextPaint.setColor(textBlack);
+        currentMonthTextPaint.setFakeBoldText(true);
+        currentMonthTextPaint.setTextSize(dip2px(AppUtil.peekActivity(), 12));
+
+        notCurrentMonthTexrPaint = new Paint();
+        notCurrentMonthTexrPaint.setAntiAlias(true);
+        notCurrentMonthTexrPaint.setTextAlign(Paint.Align.CENTER);
+        notCurrentMonthTexrPaint.setColor(textGray);
+        notCurrentMonthTexrPaint.setFakeBoldText(true);
+        notCurrentMonthTexrPaint.setTextSize(dip2px(AppUtil.peekActivity(), 12));
     }
 
     private void initColor() {
-        indigoBlue = ContextCompat.getColor(AppUtil.peekActivity(), R.color.colorPrimary);
+//        indigoBlue = ContextCompat.getColor(AppUtil.peekActivity(), R.color.colorPrimary);
     }
 
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
+    }
+
+    private float mesureTextHeght() {
+        Paint.FontMetrics fontMetrics = currentMonthTextPaint.getFontMetrics();
+//        return fontMetrics.descent - fontMetrics.ascent;
+        return fontMetrics.bottom - fontMetrics.top;
     }
 }

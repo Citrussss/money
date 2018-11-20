@@ -114,7 +114,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.5.1'
 //---------------------------------------------------------
     //高德地图
-    implementation 'com.amap.api:location:latest.integration'
+    implementation 'com.amap.api:location:4.3.0'
 //_________________________________________________________
 //    implementation 'org.projectlombok:lombok:latest.release'
 
