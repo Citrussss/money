@@ -16,8 +16,11 @@ import com.king.todo.independent.rx.compose.ErrorTransformer;
 import com.king.todo.inject.data.api.Api;
 import com.king.todo.ui.user.UserEntity;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.inject.Inject;
 
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
 import static com.king.todo.inject.component.ActivityComponent.Router.home;
@@ -55,7 +58,7 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
         addDisposable(api.login(getDataBinding().getParams())
                 .compose(new ErrorTransformer<>())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(FunnyToast::message,FunnyToast::error));
+                .subscribe(FunnyToast::message, FunnyToast::error));
     }
 
     public void onRegisterClick(View view) {
@@ -67,8 +70,20 @@ public class LoginModel extends ViewHttpModel<LoginActivity, ActivityLoginBindin
     public void onNext(UserEntity userEntity) {
 
     }
-    public void onSkipClick(View view){
+
+    public void onSkipClick(View view) {
         ArouterUtil.navigation(home);
 //        finish();
+    }
+
+    public void onTestClick(View view) {
+        Observable.just(1)
+                .doOnNext(integer -> {
+                    view.animate().scaleX(0).setDuration(1000).start();
+                })
+                .delay(1,TimeUnit.SECONDS)
+                .subscribe(integer -> {
+            view.animate().scaleX(1f).setDuration(1000).setStartDelay(1000).start();
+        });
     }
 }

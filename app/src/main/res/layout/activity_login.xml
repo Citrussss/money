@@ -91,6 +91,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
+                android:onClick="@{vm::onTestClick}"
                 android:src="@mipmap/weibo" />
         </LinearLayout>
 
