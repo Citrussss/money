@@ -23,16 +23,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity android:name=".ui.startup.StartUpActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
         </activity>
         <activity android:name=".ui.home.HomeActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".ui.user.login.LoginActivity" />
         <activity android:name=".ui.user.register.RegisterActivity" />
-        <activity android:name=".independent.ui.IndependentActivity" />
+        <activity android:name=".independent.ui.IndependentActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".mvvm.ImageActivity" />
         <meta-data android:name="com.amap.api.v2.apikey" android:value="b15d7e17e9002ce217bb5cc64d9c0ab8"/>
         <service android:name="com.amap.api.location.APSService"/>

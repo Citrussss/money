@@ -1,9 +1,11 @@
 package com.king.todo.ui;
 
 import android.app.Application;
+import android.app.NotificationManager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.king.todo.BuildConfig;
+import com.king.todo.independent.base.utils.NotifyManager;
 import com.king.todo.inject.component.AppComponent;
 import com.king.todo.inject.component.DaggerAppComponent;
 import com.king.todo.inject.module.AppModule;
@@ -17,7 +19,6 @@ public class MoneyApplication extends Application {
     public static AppComponent getAppComponent() {
         return appComponent;
     }
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -25,6 +26,7 @@ public class MoneyApplication extends Application {
         appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
         appComponent.inject(this);
         initARouter();
+        application =this;
     }
 
     private void initARouter(){
